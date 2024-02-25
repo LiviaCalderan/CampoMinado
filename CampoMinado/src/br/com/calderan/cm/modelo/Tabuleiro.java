@@ -1,6 +1,7 @@
 package br.com.calderan.cm.modelo;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -83,8 +84,21 @@ public class Tabuleiro {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		
+		System.out.println("CAMPO MINADO \n");
+		sb.append("  ");
+		for (int c = 0; c < qtdColunas; c++) {
+			sb.append(" ");
+			sb.append(c);
+			sb.append(" ");
+		}
+		
+		sb.append("\n\n");
+		
 		int i = 0;
 		for (int l = 0; l < qtdLinhas; l++) {
+			sb.append(l);
+			sb.append(" ");
+			
 			for (int q = 0; q < qtdColunas; q++) {
 				sb.append(" ");
 				sb.append(campos.get(i));
