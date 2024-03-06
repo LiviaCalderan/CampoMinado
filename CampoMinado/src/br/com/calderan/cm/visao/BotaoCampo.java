@@ -5,6 +5,8 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.BorderFactory;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import br.com.calderan.cm.modelo.Campo;
@@ -16,16 +18,16 @@ public class BotaoCampo extends JButton
 	implements CampoObservador, MouseListener {
 
 	private final Color BG_PADRAO = new Color(245, 202, 194);
-	private final Color BG_MARCADO = new Color(53, 138, 151);
+	private final Color BG_MARCADO = new Color(247, 237, 227);
 	private final Color BG_EXPLODIR = new Color(224, 10, 35);
 	private final Color TEXT_ROSA = new Color(201, 100, 129);
-	
 	
 	private Campo campo;
 	
 	public BotaoCampo(Campo campo) {
 		this.campo = campo;
 		setBackground(BG_PADRAO);
+		setOpaque(true);
 		setBorder(BorderFactory.createBevelBorder(1));
 		
 		addMouseListener(this);
@@ -50,20 +52,32 @@ public class BotaoCampo extends JButton
 	}
 
 	private void aplicarEstiloPadrao() {
-		
+		setBackground(BG_PADRAO);
+		setText("");
 	}
 
 	private void aplicarEstiloExplodir() {
-		
+		setBackground(BG_EXPLODIR);
+		setForeground(Color.WHITE);
+		setText("X");
 	}
 
 	private void aplicarEstiloMarcar() {
+		setBackground(BG_MARCADO);
+		setForeground(Color.BLACK);
+		setText("!");
 		
 	}
 
 	private void aplicarEstiloAbrir() {
-		setBackground(BG_PADRAO);
+		
 		setBorder(BorderFactory.createLineBorder(Color.gray));
+		
+		if (campo.isMinado()) {
+			setBackground(BG_EXPLODIR);
+			return;
+		}
+		setBackground(BG_PADRAO);
 		
 		switch (campo.minasNaVizinhanca()) {
 		case 1: 
