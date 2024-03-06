@@ -2,7 +2,9 @@ package br.com.calderan.cm.visao;
 
 import java.awt.GridLayout;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 import br.com.calderan.cm.modelo.Tabuleiro;
 
@@ -16,7 +18,17 @@ public class PainelTabuleiro extends JPanel {
 		tabuleiro.paraCadaCampo(c -> add(new BotaoCampo(c)));
 		
 		tabuleiro.registrarObservador(e -> {
-			//TODO mostrar resultado para o usuario
+			
+			SwingUtilities.invokeLater(() -> {
+				if (e.isGanhou()) {
+					JOptionPane.showMessageDialog(this, "GANHOU :D" );
+				} else {
+					JOptionPane.showMessageDialog(this, "Perdeu :(");
+				}
+				
+				tabuleiro.reiniciar();
+			});
+			
 		});
 		
 	}
