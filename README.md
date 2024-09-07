@@ -13,5 +13,6 @@ Este é um jogo clássico no qual o principal objetivo é descobrir todos os cam
 
 ## Tecnologias Utilizadas:
 <p>➡Linguagem: ☕ Java </p>
+<p>➡IDE: NetBeans</p>
 
 
