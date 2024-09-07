@@ -6,13 +6,13 @@ Este é um jogo clássico no qual o principal objetivo é descobrir todos os cam
 
 ## Funcionalidades:
 
- <p>:Tabuleiro Personalizável: O tabuleiro pode ser configurado com o tamanho e a quantidade de minas desejadas;</p> 
- - Revelação de Células: Ao clicar em uma célula, seu conteúdo é revelado. Células vazias revelam automaticamente o número de minas adjacentes;
- - Marcação de Minas:
- - Detecção de Vitória/Derrota: O jogo termina quando você seleciona uma célula com mina (derrota), ou revela todas as células seguras (vitória).
+<p>➡Tabuleiro Personalizável: O tabuleiro pode ser configurado com o tamanho e a quantidade de minas desejadas;</p> 
+<p>➡Revelação de Células: Ao clicar em uma célula, seu conteúdo é revelado. Células vazias revelam automaticamente o número de minas adjacentes;</p>
+<p>➡Marcação de Minas:</p>
+<p>➡Detecção de Vitória/Derrota: O jogo termina quando você seleciona uma célula com mina (derrota), ou revela todas as células seguras (vitória).</p>
 
 ## Requisitos
-- Linguagem: Java
+<p>➡Linguagem: ☕ Java </p>
 
 ##Configurações do ambiente
 
